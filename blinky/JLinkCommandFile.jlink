@@ -1,0 +1,4 @@
+erase
+loadfile pca10040/blank/armgcc/_build/nrf52832_xxaa.hex
+r
+q

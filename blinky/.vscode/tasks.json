@@ -1,0 +1,47 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build blank",
+      "type": "shell",
+      "command": "make",
+      "options": {
+        "cwd": "${workspaceFolder}/pca10040/blank/armgcc"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "clean blank",
+      "type": "shell",
+      "command": "make clean",
+      "options": {
+        "cwd": "${workspaceFolder}/pca10040/blank/armgcc"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "linux_flash blank",
+      "type": "shell",
+      "command": "sh nrf_flash.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "sdk_config blank",
+      "type": "shell",
+      "command": "make sdk_config",
+      "options": {
+        "cwd": "${workspaceFolder}/pca10040/blank/armgcc"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
