@@ -4,20 +4,25 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build blank",
+      "label": "build_blank",
       "type": "shell",
-      "command": "make",
+      "command": "make -j4 PRETTY=1",
       "options": {
         "cwd": "${workspaceFolder}/pca10040/blank/armgcc"
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
       },
       "problemMatcher": []
     },
     {
-      "label": "clean blank",
+      "label": "build_s132",
+      "type": "shell",
+      "command": "make -j4 PRETTY=1",
+      "options": {
+        "cwd": "${workspaceFolder}/pca10040/s132/armgcc"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "clean_blank",
       "type": "shell",
       "command": "make clean",
       "options": {
@@ -26,16 +31,43 @@
       "problemMatcher": []
     },
     {
-      "label": "linux_flash blank",
+      "label": "clean_s132",
       "type": "shell",
-      "command": "sh nrf_flash.sh",
+      "command": "make clean",
+      "options": {
+        "cwd": "${workspaceFolder}/pca10040/s132/armgcc"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "flash_blank",
+      "type": "shell",
+      "command": "sh jlink.sh flash_blank",
       "options": {
         "cwd": "${workspaceFolder}"
       },
       "problemMatcher": []
     },
     {
-      "label": "sdk_config blank",
+      "label": "flash_s132",
+      "type": "shell",
+      "command": "sh jlink.sh flash_s132",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "erase_flash",
+      "type": "shell",
+      "command": "sh jlink.sh erase",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "sdk_config_blank",
       "type": "shell",
       "command": "make sdk_config",
       "options": {
